@@ -1,6 +1,4 @@
-# Spring Boot Reference Application
-
-This version of the reference application is based upon springboot v2, look in the release/v1 branch for a version based upon springboot v1
+# Spring Boot Reference Application Kotliin
 
 The intention of the Reference Application is to serve as a guide when developing Business Applications
 (Fagapplikasjoner) within The Norwegian Tax Administration (Skatteetaten); applications implementing the core business 
@@ -12,22 +10,12 @@ migrations, testing, security, application versioning, build pipeline, to name a
 
 The Reference Application is implemented in [Spring Boot](https://spring.io/projects/spring-boot).
 
-In order to deploy this application on the [AuroraPlattform](https://skatteetaten.github.io/aurora) using [AuroraConfig](https://skatteetaten.github.io/aurora/documentation/aurora-config/) the following must be specified in the base file:
-
-```
-prometheus:
-  path: /actuator/prometheus
-```
-
-The standard value is /prometheus that works for spring boot 1 based applications but not boot2 based applications.
-
 
 # About the Core Technologies
 
-The recommended technology for all new business applications created within Skatteetaten is Spring Boot. Recommending
-a technology in this way is always associated with some controversy, especially in an organization with history of using
-several other technology stacks. It is, however, our opinion that at the time there are few other stacks that are better
-supported and are driving development in the Cloud Native space better than Spring Boot.
+The recommended technology for all new business applications created within Skatteetaten is Spring Boot. There are
+two main versions of the reference application. This version is implemented using Kotlin as the programming language
+instead of Java. For the Java version, see https://github.com/Skatteetaten/openshift-reference-springboot-server .
 
 
 # How to Use the Application
@@ -168,6 +156,15 @@ The reference application sets up metrics as described in the
 For applications that are deployed to OpenShift, metrics exposed at ```/prometheus``` (default, configurable) in the
 format required by Prometheus will be automatically scraped.
 
+In order to deploy this application on the [AuroraPlattform](https://skatteetaten.github.io/aurora) using [AuroraConfig](https://skatteetaten.github.io/aurora/documentation/aurora-config/) the following must be specified in the base file:
+
+```
+prometheus:
+  path: /actuator/prometheus
+```
+
+The standard value is /prometheus that works for spring boot 1 based applications but not boot2 based applications.
+
 ## Security
 
 Management interface is exposed on a separate port that is not accessible outside of the cluster. This means that no 
@@ -179,15 +176,9 @@ closing another security issue.
 All application calls between applications are secured with an application level token that is provided by a central authority.
 
 
-## Unit Testing with Spock
+## Unit Testing
 
-Unit testing has been set up and configured to use the Spock Framework with support for mocking classes and classes
-with non-default constructors. The gmavenplus-plugin and surefire-plugin are configured so that the tests will run in
-a standard maven build.
-
-For details, see:
-* [gmavenplus-plugin](http://groovy.github.io/GMavenPlus/)
-* [Spock Framework](http://spockframework.org/)
+Unit testing has been set up and configured to use Junit 5.
 
 
 ## Documentation
@@ -267,14 +258,6 @@ Plugins for code analysis via Checkstyle, Sonar, Jacoco and PiTest are included 
 with the default rule set for Skatteetaten. All code analysis is runn via the standard Jenkins pipeline scripts. See 
 section on Jenkinsfile for more details.
 
-
-### Nexus IQ
-
-Every application that is deployed into production in the Skatteetaten networks are required to run a security
-check via the Nexus IQ tool. A profile for performing this check is included in the pom, but you will need to acquire
-your own staging profile id. 
-
-Nexus IQ docs: https://help.sonatype.com/display/NXIQ)
 
 ### Build Metadata for Docker Images
 Build data for docker images is read from the docker part of the ```src/main/assembly/metadata/openshift.json```-file. 
