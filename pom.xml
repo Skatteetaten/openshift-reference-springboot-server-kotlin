@@ -319,11 +319,6 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.github.gantsign.maven</groupId>
-      <artifactId>ktlint-maven-plugin</artifactId>
-      <version>1.2.0</version>
-    </dependency>
-    <dependency>
       <groupId>org.jetbrains.kotlin</groupId>
       <artifactId>kotlin-reflect</artifactId>
     </dependency>
