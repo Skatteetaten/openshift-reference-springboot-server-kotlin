@@ -1,10 +1,9 @@
 package no.skatteetaten.aurora.openshift.reference.springboot.health
 
+import no.skatteetaten.aurora.openshift.reference.springboot.service.CounterDatabaseService
 import org.springframework.boot.actuate.health.Health
 import org.springframework.boot.actuate.health.HealthIndicator
 import org.springframework.stereotype.Component
-
-import no.skatteetaten.aurora.openshift.reference.springboot.service.CounterDatabaseService
 
 /**
  * A sample custom health check. You can add your own health checks that verifies the proper operational status of your

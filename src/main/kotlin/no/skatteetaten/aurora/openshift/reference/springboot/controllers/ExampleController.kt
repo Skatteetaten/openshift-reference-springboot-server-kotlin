@@ -1,16 +1,13 @@
 package no.skatteetaten.aurora.openshift.reference.springboot.controllers
 
+import com.fasterxml.jackson.databind.JsonNode
+import no.skatteetaten.aurora.AuroraMetrics
 import no.skatteetaten.aurora.AuroraMetrics.StatusValue.CRITICAL
 import no.skatteetaten.aurora.AuroraMetrics.StatusValue.OK
-
+import no.skatteetaten.aurora.openshift.reference.springboot.service.SometimesFailingService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.client.RestTemplate
-
-import com.fasterxml.jackson.databind.JsonNode
-
-import no.skatteetaten.aurora.AuroraMetrics
-import no.skatteetaten.aurora.openshift.reference.springboot.service.SometimesFailingService
 
 /*
  * An example controller that shows how to do a REST call and how to do an operation with a operations metrics
@@ -49,4 +46,3 @@ class ExampleController(
         private val METRIC_NAME = "sometimes"
     }
 }
-

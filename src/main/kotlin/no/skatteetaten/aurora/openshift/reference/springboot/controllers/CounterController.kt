@@ -1,9 +1,8 @@
 package no.skatteetaten.aurora.openshift.reference.springboot.controllers
 
+import no.skatteetaten.aurora.openshift.reference.springboot.service.CounterDatabaseService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
-
-import no.skatteetaten.aurora.openshift.reference.springboot.service.CounterDatabaseService
 
 /**
  * This is an example Controller that demonstrates a very simple controller that increments a counter

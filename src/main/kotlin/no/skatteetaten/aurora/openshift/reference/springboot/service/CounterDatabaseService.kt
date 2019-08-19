@@ -1,9 +1,9 @@
 package no.skatteetaten.aurora.openshift.reference.springboot.service
 
+import java.lang.IllegalStateException
 import org.springframework.jdbc.core.JdbcTemplate
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
-import java.lang.IllegalStateException
 
 /**
  * An example service that demonstrates basic database operations.

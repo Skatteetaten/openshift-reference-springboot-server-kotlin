@@ -8,5 +8,5 @@ import org.springframework.boot.runApplication
 class OpenshiftReferenceSpringbootServerKotlinApplication
 
 fun main(args: Array<String>) {
-	runApplication<OpenshiftReferenceSpringbootServerKotlinApplication>(*args)
+    runApplication<OpenshiftReferenceSpringbootServerKotlinApplication>(*args)
 }
