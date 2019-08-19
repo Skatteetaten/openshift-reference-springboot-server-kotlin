@@ -1,4 +1,4 @@
-package no.skatteetaten.aurora.openshift.reference.springboot
+package no.skatteetaten.aurora.openshift.reference.springboot.service
 
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest
