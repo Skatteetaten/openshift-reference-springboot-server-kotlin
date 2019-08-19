@@ -300,10 +300,29 @@
           </rules>
         </configuration>
       </plugin>
+      <plugin>
+        <groupId>com.github.gantsign.maven</groupId>
+        <artifactId>ktlint-maven-plugin</artifactId>
+        <version>1.2.0</version>
+        <executions>
+          <execution>
+            <id>format-and-check</id>
+            <goals>
+              <goal>format</goal>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 
   <dependencies>
+    <dependency>
+      <groupId>com.github.gantsign.maven</groupId>
+      <artifactId>ktlint-maven-plugin</artifactId>
+      <version>1.2.0</version>
+    </dependency>
     <dependency>
       <groupId>org.jetbrains.kotlin</groupId>
       <artifactId>kotlin-reflect</artifactId>
