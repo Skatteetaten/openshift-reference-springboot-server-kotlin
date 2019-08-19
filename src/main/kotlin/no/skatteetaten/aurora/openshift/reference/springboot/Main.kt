@@ -1,3 +1,4 @@
+@file:JvmName("Main")
 package no.skatteetaten.aurora.openshift.reference.springboot
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
