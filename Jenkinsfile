@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 def config = [
-    scriptVersion              : 'v6',
+    scriptVersion              : 'v7',
     iqOrganizationName         : 'Team AOS',
     pipelineScript             : 'https://git.aurora.skead.no/scm/ao/aurora-pipeline-scripts.git',
     downstreamSystemtestJob    : [branch: env.BRANCH_NAME],
@@ -11,10 +11,8 @@ def config = [
     jiraFiksetIKomponentversjon: true,
     chatRoom                   : "#aos-notifications",
     compileProperties          : "-U",
-    openShiftBuilderVersion    : "dev_nexus3-SNAPSHOT",
     versionStrategy            : [
-        [branch: 'master', versionHint: '1'],
-        [branch: 'bugfix/AOS-3687', versionHint: '0']
+        [branch: 'master', versionHint: '1']
     ]
 ]
 fileLoader.withGit(config.pipelineScript, config.scriptVersion) {
