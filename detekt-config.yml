@@ -1,0 +1,4 @@
+---
+# Naming er deaktivert fordi Detekt klager på æøå
+naming:
+    active: false
