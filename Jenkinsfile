@@ -9,6 +9,7 @@ def config = [
     nodeVersion                : '10',
     jiraFiksetIKomponentversjon: true,
     chatRoom                   : "#aos-notifications",
+    sonarQubeUrl               : "https://ref-sonar.aurora.skead.no/",
     compileProperties          : "-U",
     versionStrategy            : [
         [branch: 'master', versionHint: '1']
