@@ -10,6 +10,7 @@ def config = [
     jiraFiksetIKomponentversjon: true,
     chatRoom                   : "#aos-notifications",
     sonarQubeUrl               : "https://ref-sonar.aurora.skead.no/",
+    sonarBreakOnQualityGate    : true,
     compileProperties          : "-U",
     versionStrategy            : [
         [branch: 'master', versionHint: '1']
