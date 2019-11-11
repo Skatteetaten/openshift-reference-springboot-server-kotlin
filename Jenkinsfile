@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 def config = [
-    scriptVersion              : 'v7',
+    scriptVersion              : 'feature/AOS-3695_detekt',
     iqOrganizationName         : 'Team AOS',
     pipelineScript             : 'https://git.aurora.skead.no/scm/ao/aurora-pipeline-scripts.git',
     downstreamSystemtestJob    : [branch: env.BRANCH_NAME],
