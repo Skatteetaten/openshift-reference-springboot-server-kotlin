@@ -8,6 +8,7 @@ def config = [
     javaVersion                : 11,
     nodeVersion                : '10',
     jiraFiksetIKomponentversjon: true,
+    sonarQubeUrl                     : 'https://ref-sonar.aurora.skead.no/',
     chatRoom                   : "#aos-notifications",
     compileProperties          : "-U",
     versionStrategy            : [
