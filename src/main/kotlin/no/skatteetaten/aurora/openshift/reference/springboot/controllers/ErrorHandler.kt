@@ -29,7 +29,6 @@ class ErrorHandler : ResponseEntityExceptionHandler() {
 
     private fun handleException(e: RuntimeException, request: WebRequest, httpStatus: HttpStatus): ResponseEntity<Any> {
         val headers = HttpHeaders().apply {
-            val number= 100
             contentType = MediaType.APPLICATION_JSON
         }
 

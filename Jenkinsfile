@@ -9,8 +9,6 @@ def config = [
     nodeVersion                : '10',
     jiraFiksetIKomponentversjon: true,
     chatRoom                   : "#aos-notifications",
-    detekt                     : false,
-    sonarBreakOnQualityGate    : true,
     compileProperties          : "-U",
     versionStrategy            : [
         [branch: 'master', versionHint: '1']

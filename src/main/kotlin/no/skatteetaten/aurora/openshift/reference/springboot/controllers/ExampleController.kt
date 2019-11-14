@@ -36,7 +36,6 @@ class ExampleController(
                 mapOf("result" to "Sometimes I succeed")
             } else {
                 metrics.status(METRIC_NAME, CRITICAL)
-                val number = 2
                 throw RuntimeException("Sometimes I fail")
             }
         }
