@@ -326,8 +326,6 @@
               <goal>check</goal>
             </goals>
             <configuration>
-              <buildUponDefaultConfig>true</buildUponDefaultConfig>
-              <config>detekt-config.yml</config>
               <report>
                 <report>
                   xml:${project.build.directory}/detekt.xml
