@@ -8,7 +8,7 @@ def config = [
     javaVersion    : 11,
     nodeVersion    : '10',
     testStages     : [[
-                          auroraConfigEnvironment: 'st-refapp',
+                          auroraConfigEnvironment: 'st-refapp-kotlin',
                           applicationUnderTest   : "referanse-kotlin",
                           testSequence           : [
                               [
