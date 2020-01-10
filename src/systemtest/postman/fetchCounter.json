@@ -9,7 +9,7 @@
 		{
 			"name": "fetchCounter",
 			"request": {
-				"url": "http://{{referanse}}/api/counter",
+				"url": "http://{{referanse-kotlin}}/api/counter",
 				"method": "GET",
 				"header": [
 					{
@@ -25,7 +25,7 @@
     {
       "name": "fetchCounter2",
       "request": {
-        "url": "http://{{referanse}}/api/counter",
+        "url": "http://{{referanse-kotlin}}/api/counter",
         "method": "GET",
         "header": [
           {
