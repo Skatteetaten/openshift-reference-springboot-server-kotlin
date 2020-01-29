@@ -11,8 +11,8 @@ def config = [
     jacoco : false,
     checkstyle : false,
     compileProperties          : "-U",
-    detektBaselinePath         : "config/detekt/detekt.xml",
-    detektConfigPath           : "default-detekt-config.yml",
+    detektBaselinePath         : "/config/detekt/detekt.xml",
+    detektConfigPath           : "/default-detekt-config.yml",
     sonarQubeUrl               : 'https://ref-sonar.aurora.skead.no/',
     versionStrategy            : [
         [branch: 'master', versionHint: '1']
