@@ -10,10 +10,9 @@ def config = [
     jiraFiksetIKomponentversjon: true,
     jacoco : false,
     checkstyle : false,
-    chatRoom                   : "#aos-notifications",
     compileProperties          : "-U",
     detektBaselinePath         : "config/detekt/detekt.xml",
-    detektConfigPath           : "**/default-detekt-config.yml",
+    detektConfigPath           : "default-detekt-config.yml",
     sonarQubeUrl               : 'https://ref-sonar.aurora.skead.no/',
     versionStrategy            : [
         [branch: 'master', versionHint: '1']
