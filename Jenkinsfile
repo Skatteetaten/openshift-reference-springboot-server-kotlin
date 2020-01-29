@@ -8,9 +8,11 @@ def config = [
     javaVersion                : 11,
     nodeVersion                : '10',
     jiraFiksetIKomponentversjon: true,
+    jacoco : false,
+    checkstyle : false,
     chatRoom                   : "#aos-notifications",
     compileProperties          : "-U",
-    detektBaselinePath         : "**/target/detekt.xml",
+    detektBaselinePath         : "config/detekt/detekt.xml",
     detektConfigPath           : "**/default-detekt-config.yml",
     sonarQubeUrl               : 'https://ref-sonar.aurora.skead.no/',
     versionStrategy            : [
