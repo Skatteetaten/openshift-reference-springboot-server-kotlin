@@ -10,6 +10,8 @@ def config = [
     jiraFiksetIKomponentversjon: true,
     chatRoom                   : "#aos-notifications",
     compileProperties          : "-U",
+    detektBaselinePath         : "/target/detekt.xml",
+    detektConfigPath           : "/default-detekt-config.yml",
     versionStrategy            : [
         [branch: 'master', versionHint: '1']
     ]
