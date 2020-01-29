@@ -12,6 +12,7 @@ def config = [
     compileProperties          : "-U",
     detektBaselinePath         : "/target/detekt.xml",
     detektConfigPath           : "/default-detekt-config.yml",
+    sonarQubeUrl               : 'https://ref-sonar.aurora.skead.no/',
     versionStrategy            : [
         [branch: 'master', versionHint: '1']
     ]
