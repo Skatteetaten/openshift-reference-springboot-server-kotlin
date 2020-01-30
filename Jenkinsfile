@@ -1,6 +1,6 @@
 #!/usr/bin/env groovy
 def config = [
-    scriptVersion              : 'feature/aos-3695-detekt',
+    scriptVersion              : 'v7',
     iqOrganizationName         : 'Team AOS',
     pipelineScript             : 'https://git.aurora.skead.no/scm/ao/aurora-pipeline-scripts.git',
     downstreamSystemtestJob    : [branch: env.BRANCH_NAME],
@@ -8,12 +8,8 @@ def config = [
     javaVersion                : 11,
     nodeVersion                : '10',
     jiraFiksetIKomponentversjon: true,
-    jacoco : false,
-    checkstyle : false,
+    chatRoom                   : "#aos-notifications",
     compileProperties          : "-U",
-    detektBaselinePath         : "/config/detekt/detekt.xml",
-    detektConfigPath           : "/default-detekt-config.yml",
-    sonarQubeUrl               : 'https://ref-sonar.aurora.skead.no/',
     versionStrategy            : [
         [branch: 'master', versionHint: '1']
     ]
