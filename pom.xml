@@ -20,7 +20,6 @@
     <maven.min-version>3.5.0</maven.min-version>
 
     <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
-    <sonar.jacoco.reportPaths>${project.basedir}/target/jacoco.exec</sonar.jacoco.reportPaths>
     <sonar.coverage.exclusions>**/*Main.java</sonar.coverage.exclusions>
     <sonar.tests>src/test/kotlin</sonar.tests>
     <sonar-maven-plugin.version>3.7.0.1746</sonar-maven-plugin.version>
@@ -217,10 +216,6 @@
       <plugin>
         <groupId>org.jacoco</groupId>
         <artifactId>jacoco-maven-plugin</artifactId>
-        <configuration>
-          <destFile>${sonar.jacoco.reportPaths}</destFile>
-          <append>true</append>
-        </configuration>
         <executions>
           <execution>
             <goals>
