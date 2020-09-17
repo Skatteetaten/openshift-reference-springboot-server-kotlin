@@ -1,7 +1,7 @@
 plugins {
     id("idea")
     id("java")
-    id("no.skatteetaten.gradle.aurora") version("4.0.0rc3")
+    id("no.skatteetaten.gradle.aurora") version("4.0.1")
 }
 
 aurora {
