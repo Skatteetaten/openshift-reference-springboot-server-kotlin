@@ -43,7 +43,6 @@ class S3ServiceTest {
             s3Service.getFileContent("myFile.txt")
         }
 
-
         assertThat(fileContent).isEqualTo(expectedFileContent)
     }
 }

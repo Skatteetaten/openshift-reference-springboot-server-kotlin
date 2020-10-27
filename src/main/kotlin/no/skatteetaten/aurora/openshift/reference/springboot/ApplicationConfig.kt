@@ -19,7 +19,6 @@ class ApplicationConfig {
     @Bean
     fun restTemplate(builder: RestTemplateBuilder): RestTemplate = builder.build()
 
-
     @Qualifier("default")
     @Bean
     fun defaultS3Client(s3Properties: S3Properties): S3Client {

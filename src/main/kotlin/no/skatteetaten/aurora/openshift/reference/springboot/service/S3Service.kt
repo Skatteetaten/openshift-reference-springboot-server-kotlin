@@ -1,6 +1,5 @@
 package no.skatteetaten.aurora.openshift.reference.springboot.service
 
-import java.io.File
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
 import software.amazon.awssdk.core.sync.RequestBody
