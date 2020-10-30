@@ -1,6 +1,5 @@
 package no.skatteetaten.aurora.openshift.reference.springboot.service
 
-import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
 import software.amazon.awssdk.core.sync.RequestBody
 import software.amazon.awssdk.services.s3.S3Client
@@ -9,7 +8,7 @@ import software.amazon.awssdk.services.s3.model.PutObjectRequest
 
 @Service
 class S3Service(
-    @Qualifier("default") val s3Client: S3Client,
+    val s3Client: S3Client,
     s3Properties: S3Properties
 ) {
     private val s3Bucket = s3Properties.buckets["default"] ?: throw RuntimeException("")

@@ -1,9 +1,7 @@
 package no.skatteetaten.aurora.openshift.reference.springboot
 
-import java.net.URI
 import no.skatteetaten.aurora.openshift.reference.springboot.service.S3Properties
-import org.springframework.beans.factory.annotation.Qualifier
-import org.springframework.boot.context.properties.ConfigurationPropertiesScan
+import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.web.client.RestTemplateBuilder
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
@@ -11,15 +9,15 @@ import org.springframework.web.client.RestTemplate
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials
 import software.amazon.awssdk.regions.Region
 import software.amazon.awssdk.services.s3.S3Client
+import java.net.URI
 
 @Configuration
-@ConfigurationPropertiesScan
+@EnableConfigurationProperties(S3Properties::class)
 class ApplicationConfig {
 
     @Bean
     fun restTemplate(builder: RestTemplateBuilder): RestTemplate = builder.build()
 
-    @Qualifier("default")
     @Bean
     fun defaultS3Client(s3Properties: S3Properties): S3Client {
         val s3Config =

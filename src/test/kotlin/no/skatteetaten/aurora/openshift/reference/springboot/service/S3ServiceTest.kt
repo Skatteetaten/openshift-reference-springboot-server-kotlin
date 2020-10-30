@@ -1,20 +1,21 @@
 package no.skatteetaten.aurora.openshift.reference.springboot.service
 
 import io.findify.s3mock.S3Mock
-import io.zonky.test.db.AutoConfigureEmbeddedDatabase
+import no.skatteetaten.aurora.openshift.reference.springboot.ApplicationConfig
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.assertDoesNotThrow
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.boot.test.context.SpringBootTest
+import org.springframework.boot.test.autoconfigure.web.client.RestClientTest
+import org.springframework.test.context.ContextConfiguration
 import software.amazon.awssdk.services.s3.S3Client
 import software.amazon.awssdk.services.s3.model.CreateBucketRequest
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-@SpringBootTest
-@AutoConfigureEmbeddedDatabase
+@RestClientTest
+@ContextConfiguration(classes = [ApplicationConfig::class, S3Service::class])
 class S3ServiceTest {
 
     @Autowired
