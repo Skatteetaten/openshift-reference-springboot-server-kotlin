@@ -48,8 +48,8 @@ class ExampleController(
 
     @PostMapping("/api/example/s3")
     fun postFileContent(@RequestBody request: S3FileContentRequest): S3FileContentResponse {
-        s3Service.putFileContent(request.fileName, request.content)
-        return S3FileContentResponse(s3Service.getFileContent(request.fileName))
+        s3Service.putFileContent(request.fileName, request.content, request.useDefaultBucketObjectArea)
+        return S3FileContentResponse(s3Service.getFileContent(request.fileName, request.useDefaultBucketObjectArea))
     }
 
     companion object {
@@ -59,7 +59,8 @@ class ExampleController(
 
 data class S3FileContentRequest(
     val fileName: String,
-    val content: String
+    val content: String,
+    val useDefaultBucketObjectArea: Boolean
 )
 
 data class S3FileContentResponse(

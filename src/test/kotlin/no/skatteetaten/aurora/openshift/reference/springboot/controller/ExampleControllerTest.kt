@@ -10,6 +10,7 @@ import no.skatteetaten.aurora.openshift.reference.springboot.controllers.S3FileC
 import no.skatteetaten.aurora.openshift.reference.springboot.service.S3Service
 import no.skatteetaten.aurora.openshift.reference.springboot.service.SometimesFailingService
 import org.junit.jupiter.api.Test
+import org.mockito.ArgumentMatchers.anyBoolean
 import org.mockito.ArgumentMatchers.anyString
 import org.mockito.BDDMockito.given
 import org.springframework.beans.factory.annotation.Autowired
@@ -119,14 +120,15 @@ class ExampleControllerTest : AbstractController() {
 
     @Test
     fun `Example test for documenting the s3 endpoint`() {
-        given(s3Service.putFileContent(anyString(), anyString())).willAnswer { }
-        given(s3Service.getFileContent(anyString())).willReturn("Content from file")
+        given(s3Service.putFileContent(anyString(), anyString(), anyBoolean())).willAnswer { }
+        given(s3Service.getFileContent(anyString(), anyBoolean())).willReturn("Content from file")
 
         val apiUrl = "/api/example/s3"
 
         val request = S3FileContentRequest(
-            "myFile.txt",
-            "Content from file"
+            fileName = "myFile.txt",
+            content = "Content from file",
+            useDefaultBucketObjectArea = true
         )
 
         mvc.perform(post(apiUrl).content(request.toByteArray()).contentType(MediaType.APPLICATION_JSON_VALUE))

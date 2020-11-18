@@ -1,19 +1,20 @@
 package no.skatteetaten.aurora.openshift.reference.springboot.service
 
+import no.skatteetaten.aurora.openshift.reference.springboot.service.dto.S3Configuration
+import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.stereotype.Service
 import software.amazon.awssdk.core.sync.RequestBody
-import software.amazon.awssdk.services.s3.S3Client
 import software.amazon.awssdk.services.s3.model.GetObjectRequest
 import software.amazon.awssdk.services.s3.model.PutObjectRequest
 
 @Service
 class S3Service(
-    val s3Client: S3Client,
-    s3Properties: S3Properties
+    val defaultS3Configuration: S3Configuration,
+    @Qualifier("otherArea")
+    val otherS3Configuration: S3Configuration
 ) {
-    private val s3Bucket = s3Properties.buckets["default"] ?: throw RuntimeException("")
-
-    fun putFileContent(keyName: String, fileContent: String) {
+    fun putFileContent(keyName: String, fileContent: String, useDefaultObjectArea: Boolean) {
+        val (s3Client, s3Bucket) = if (useDefaultObjectArea) defaultS3Configuration else otherS3Configuration
         val fullKeyName = "${s3Bucket.objectPrefix}/$keyName"
         s3Client.putObject(
             PutObjectRequest.builder().bucket(s3Bucket.bucketName).key(fullKeyName).build(),
@@ -21,7 +22,8 @@ class S3Service(
         )
     }
 
-    fun getFileContent(keyName: String): String {
+    fun getFileContent(keyName: String, useDefaultObjectArea: Boolean): String {
+        val (s3Client, s3Bucket) = if (useDefaultObjectArea) defaultS3Configuration else otherS3Configuration
         val fullKeyName = "${s3Bucket.objectPrefix}/$keyName"
         return s3Client.getObjectAsBytes(
             GetObjectRequest.builder().bucket(s3Bucket.bucketName).key(fullKeyName).build()

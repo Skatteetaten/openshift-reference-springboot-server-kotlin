@@ -31,15 +31,20 @@ spring:
 
 s3:
     buckets:
-        default:
-            serviceEndpoint: "http://localhost:9000"
-            accessKey: "minio"
-            secretKey: "miniosecret"
-            objectPrefix: "default"
-            bucketRegion: "us-east-1"
-            bucketName: "default"
-
-
+        referanse-kotlin:
+            serviceEndpoint: http://localhost:9000
+            accessKey: minio
+            secretKey: miniosecret
+            bucketName: default
+            objectPrefix: refapp
+            bucketRegion: us-east-1
+        referanse-kotlin2:
+            serviceEndpoint: http://localhost:9000
+            accessKey: minio
+            secretKey: miniosecret
+            bucketName: default
+            objectPrefix: refapp2
+            bucketRegion: us-east-1
 
 management:
     server.port: 8081
