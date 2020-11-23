@@ -24,10 +24,27 @@ logging:
 spring:
     profiles: local
     datasource:
-        url: ${refapp.datasource.url:jdbc:oracle:thin:@host:port/path}
-        username: ${refapp.datasource.username:username}
-        password: ${refapp.datasource.password:password}
+        url: ${refapp.datasource.url:jdbc:postgresql://localhost:5432/refapp}
+        username: ${refapp.datasource.username:postgres}
+        password: ${refapp.datasource.password:postgres}
 
+
+s3:
+    buckets:
+        referanse-kotlin:
+            serviceEndpoint: http://localhost:9000
+            accessKey: minio
+            secretKey: miniosecret
+            bucketName: default
+            objectPrefix: refapp
+            bucketRegion: us-east-1
+        referanse-kotlin2:
+            serviceEndpoint: http://localhost:9000
+            accessKey: minio
+            secretKey: miniosecret
+            bucketName: default
+            objectPrefix: refapp2
+            bucketRegion: us-east-1
 
 management:
     server.port: 8081
