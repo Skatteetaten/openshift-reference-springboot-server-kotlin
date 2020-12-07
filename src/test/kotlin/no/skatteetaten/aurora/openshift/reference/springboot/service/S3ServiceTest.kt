@@ -16,7 +16,6 @@ import software.amazon.awssdk.services.s3.model.CreateBucketRequest
 @RestClientTest(components = [ApplicationConfig::class, S3Service::class])
 class S3ServiceTest {
 
-
     @Autowired
     private lateinit var s3Service: S3Service
 
