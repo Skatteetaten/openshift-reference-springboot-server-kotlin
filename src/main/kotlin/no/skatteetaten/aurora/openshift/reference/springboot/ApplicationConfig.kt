@@ -15,7 +15,6 @@ import software.amazon.awssdk.regions.Region
 import software.amazon.awssdk.services.s3.S3Client
 import java.net.URI
 
-
 @Configuration
 @EnableConfigurationProperties(S3Properties::class)
 class ApplicationConfig {
@@ -39,7 +38,6 @@ class ApplicationConfig {
         return baseS3Configuration(s3Properties, "referanse-kotlin2")
     }
 
-
     private fun baseS3Configuration(s3Properties: S3Properties, objectAreaName: String): S3Configuration {
         val objectArea = s3Properties.getBucketOrThrow(objectAreaName)
         val s3Client = S3Client.builder()
@@ -51,6 +49,5 @@ class ApplicationConfig {
             .build()
 
         return S3Configuration(s3Client, objectArea)
-
     }
 }
