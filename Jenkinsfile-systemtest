@@ -4,7 +4,7 @@ def config = [
     scriptVersion  : 'v7',
     pipelineScript : 'https://git.aurora.skead.no/scm/ao/aurora-pipeline-scripts.git',
     affiliation    : 'aup',
-    openShiftSleepAfterSetup: 150,
+    openShiftSleepAfterSetup: 240,
     credentialsId  : "github",
     javaVersion    : 11,
     nodeVersion    : '10',
