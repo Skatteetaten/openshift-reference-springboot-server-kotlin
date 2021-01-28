@@ -3,6 +3,8 @@
 node {
     checkout scm
 
+    tool "maven"
+
     auroraMaven {
         buildAuroraMaven 'clean install'
     }
