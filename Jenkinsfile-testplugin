@@ -1,6 +1,8 @@
 #!/usr/bin/env groovy
 
 node {
+    checkout scm
+
     auroraMaven {
         buildAuroraMaven 'clean install'
         buildAuroraMaven 'clean install'
