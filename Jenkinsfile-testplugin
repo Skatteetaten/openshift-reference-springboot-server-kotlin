@@ -5,7 +5,5 @@ node {
 
     auroraMaven {
         buildAuroraMaven 'clean install'
-        buildAuroraMaven 'clean install'
-        buildAuroraMaven 'clean install'
     }
 }
