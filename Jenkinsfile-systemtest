@@ -1,7 +1,7 @@
 #!/usr/bin/env groovy
 
 def config = [
-    scriptVersion  : 'v7',
+    scriptVersion  : 'feature/AOS-5379-Browserstack-credentials-for-downstream-isolert-systemtest',
     pipelineScript : 'https://git.aurora.skead.no/scm/ao/aurora-pipeline-scripts.git',
     affiliation    : 'aup',
     openShiftSleepAfterSetup: 90,
