@@ -10,7 +10,6 @@ migrations, testing, security, application versioning, build pipeline, to name a
 
 The Reference Application is implemented in [Spring Boot](https://spring.io/projects/spring-boot).
 
-
 # About the Core Technologies
 
 The recommended technology for all new business applications created within Skatteetaten is Spring Boot. There are
