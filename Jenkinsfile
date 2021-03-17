@@ -8,7 +8,6 @@ def config = [
     javaVersion                : 11,
     nodeVersion                : '10',
     jiraFiksetIKomponentversjon: true,
-    browserstackCredentialsId  : "test",
     chatRoom                   : "#aos-notifications",
     compileProperties          : "-U",
     versionStrategy            : [
