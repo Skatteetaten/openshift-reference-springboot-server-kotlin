@@ -54,7 +54,7 @@ Default `maxmimumPoolSize` for Hikary is **10**. This has been reduced to **3** 
 
 ## Starters
 
-The application has one starter  [aurora-springboot2-starter](https://github.com/Skatteetaten/aurora-springboot2-starter/tree/master) in order to set up normal aurora requirements such as
+The application has one starter  [aurora-spring-boot-mvc-starter](https://github.com/Skatteetaten/aurora-spring-boot-mvc-starter) in order to set up normal aurora requirements such as
  - grouping properties into their own property sources
  - setting default properties for actuator
  - instrumenting RestTemplates with metrics
@@ -85,9 +85,7 @@ They may also optionally send a ```Meldingsid``` header as an identifier for the
 
 The value of the ```Klientid```, ```Korrelasjonsid``` and ```Meldingsid``` headers should be logged on every request.
 This is implemented by using a filter that will extract the values of these headers and putting them on 
-[SLF4J MDC](http://www.slf4j.org/api/org/slf4j/MDC.html). The artifact implementing the filter is 
-[aurora-header-mdc-filter](https://github.com/skatteetaten/aurora-header-mdc-filter) and is included
-as a dependency in the pom.xml-file. See the ```ApplicationConfig```-class for details on how the filter is configured.
+[SLF4J MDC](http://www.slf4j.org/api/org/slf4j/MDC.html). See the ```ApplicationConfig```-class for details on how the filter is configured.
 
  
 ## Database Migrations with Flyway
