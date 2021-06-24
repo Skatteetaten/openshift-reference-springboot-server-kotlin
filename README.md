@@ -1,4 +1,4 @@
-# Spring Boot Reference Application Kotliin
+# Spring Boot Reference Application Kotlin
 
 The intention of the Reference Application is to serve as a guide when developing Business Applications
 (Fagapplikasjoner) within The Norwegian Tax Administration (Skatteetaten); applications implementing the core business 
